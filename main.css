@@ -1,155 +1,39 @@
-/* font changes */
-*,
-:root {
-  --font-primary: system-ui !important;
-  --font-display: system-ui !important;
-  --font-headline: system-ui !important;
-  --font-code: system-ui !important;
-  --font-clan-body: system-ui !important;
-  --font-clan-signature: system-ui !important;
-  font-family: system-ui !important;
-  font-size: 99.5% !important;
-}
-
-/* fuck circles */
+/* general style changes */
 * {
-  border-radius: 0 !important;
-  mask: none;
+    border-radius: 0px !important;
+    mask: none !important;
+    font-family: system-ui !important;
+    font-size: 99.5% !important;
+    text-transform: lowercase !important;
 }
 
-/* fuck uppercase characters */
-* {
-  text-transform: lowercase !important;
-}
-
-/* remove member list activies (must be collapsed first) */
-[class^="membersGroup"]:has([class^="headerContainer"]) {
-  display: none !important;
-}
-
-/* remove pointless space above the chat input */
-[class^="scrollerSpacer"] {
-  height: 10px !important;
-}
-
-/* chatbox fixes */
-[class^="channelTextArea"]>[class^=scrollableContainer] {
-  background-color: #0a0a0a;
-}
-
-[class^="channelTextArea"] {
-  border: none;
-  padding-top: 2px;
-  background-color: inherit;
-}
-
-/* fix user settings card thing */
-[class^="sidebar"]>[class^="panels"] {
-  border: none;
-}
-[class^="sidebar"]>[class^="panels"]>[class^="container"] {
-  margin: 2px !important;
-}
-
-/* remove app icons in channel list */
-div>img[class^="gameIcon"] {
-  display: none !important;
-}
-
-/* remove profile effects */
-[class^="profileEffects"] {
-  display: none !important;
-}
-
-/* fix compact timestamp width */
-[class^="latin24CompactTimeStamp"] {
-  width: auto !important;
-}
-
-/* revert pleading emoji */
-.emoji[alt="🥺"],
-.emoji[alt=":pleading_face:"] {
-  content: url("https://vendicated.github.io/random-files/pleading_face.svg");
-}
-
+/* general fixes */
+[class^="latin24CompactTimeStamp"] { width: auto !important; }
+.emoji[alt="🥺"], .emoji[alt=":pleading_face:"] { content: url("https://vendicated.github.io/random-files/pleading_face.svg"); }
 button[data-surrogates="🥺"]>div {
   background-image: url("https://vendicated.github.io/random-files/pleading_face.svg") !important;
   background-position: unset !important;
   background-size: unset !important;
 }
 
-/* remove nitro sections in dms */
-li>div>a[href="/shop"],
-li>div>a[href="/store"] {
-  display: none !important;
-}
+/* general removals */
+div[class^="members"] span[class*="clanTag"] { display: none; }
+[class^="membersGroup"]:has([class^="headerContainer"]) { display: none !important; }
+[class^="burstGlow"] { display: none !important; }
+[class^="reaction"] { background: none !important; }
+[class^="reactionCount"] { color: var(--interactive-normal) !important; }
+[class^="channelAppLauncher"], [class^="hoverButtonGroup"]:has(div[aria-label*="Apps"]) { display: none !important; }
+[class^="upperBadge"] { display: none; }
 
-/* remove show all vcs button */
-[class^="refreshVoiceChannelsButton"] {
-  display: none !important;
-}
+/* nitro related removals */
+[class^="profileEffects"] { display: none !important; }
+li>div>a[href="/shop"], li>div>a[href="/store"] { display: none !important; }
+button[aria-label*="Send a gift"] { display: none !important; }
 
-/* remove channel new badge */
-[class^="newChannel"] {
-  display: none !important;
-}
-
-/* fix guild tags (show fully in chat, hide in member list */
-[class*="clanTag"]>span>span {
-  text-indent: 0;
-}
-
-div[class^="members"] span[class*="clanTag"] {
-  display: none;
-}
-
-/* remove channel section dividers */
-[class^="sectionDivider"] {
-  display: none !important;
-}
-
-/* remove simple section from permission settings */
-[class^="settingCard"],
-[class*="advancedModeDivider"] {
-  display: none !important;
-}
-
-/* make super reactions normal (requires super reaction tweaks with a limit of 0) */
-[class^="burstGlow"] {
-  display: none !important;
-}
-
-[class^="reaction"] {
-  background: none !important;
-}
-
-[class^="reactionCount"] {
-  color: var(--interactive-normal) !important;
-}
-
-/* remove apps buttons */
-[class^="channelAppLauncher"],
-[class^="hoverButtonGroup"]:has(div[aria-label*="Apps"]) {
-  display: none !important;
-}
-
-/* remove # in voice */
-nav>[class^="container"]:has([class^="voiceChannelsIcon"]) {
-  display: none !important;
-}
-
-/* remove chat gift button */
-button[aria-label*="Send a gift"] {
-  display: none !important;
-}
-
-/* remove voice channel usage indicators in server list */
-[class^="upperBadge"] {
-  display: none;
-}
-
-/* remove active now header */
-#channels [class^=containerDefault_]:has(> div > h3),
-#channels [class^=containerDefault_]:has(> [class^=list_][class*=collapsed_]) {
-  display: none !important;
-}
+/* channel related removals */
+[class^="refreshVoiceChannelsButton"] { display: none !important; }
+[class^="newChannel"] { display: none !important; }
+[class^="sectionDivider"] { display: none !important; }
+div>img[class^="gameIcon"] { display: none !important; }
+#channels [class^=containerDefault_]:has(> div > h3), #channels [class^=containerDefault_]:has(> [class^=list_][class*=collapsed_]) { display: none !important; }
+nav>[class^="container"]:has([class^="voiceChannelsIcon"]) { display: none !important; }

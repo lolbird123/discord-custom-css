@@ -21,6 +21,7 @@ div[class^="members"] span[class*="clanTag"] { display: none; }
 [class^="membersGroup"]:has([class^="headerContainer"]) { display: none !important; }
 [class^="burstGlow"] { display: none !important; }
 [class^="reaction"] { background: none !important; }
+div[class^="effectsWrapper"] { display: none; }
 [class^="reactionCount"] { color: var(--interactive-normal) !important; }
 [class^="channelAppLauncher"], [class^="hoverButtonGroup"]:has(div[aria-label*="Apps"]) { display: none !important; }
 [class^="upperBadge"] { display: none; }
@@ -28,7 +29,7 @@ div[class^="members"] span[class*="clanTag"] { display: none; }
 /* nitro related removals */
 [class^="profileEffects"] { display: none !important; }
 li>div>a[href="/shop"], li>div>a[href="/store"] { display: none !important; }
-button[aria-label*="Send a gift"] { display: none !important; }
+div[aria-label*="Send a gift"] { display: none !important; }
 
 /* channel related removals */
 [class^="refreshVoiceChannelsButton"] { display: none !important; }

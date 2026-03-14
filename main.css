@@ -1,14 +1,14 @@
 /* general style changes */
 * {
     border-radius: 0px !important;
-    mask: none !important;
     font-family: system-ui !important;
-    font-size: 99.5% !important;
     text-transform: lowercase !important;
 }
+[class*="listItem"] foreignObject, [class*="avatar"] foreignObject, [class*="Avatar"] foreignObject { mask: none !important; }
+[class*="avatarDecoration"], [class*="profileHeader"] circle { display: none !important; }
 
 /* general fixes */
-[class^="latin24CompactTimeStamp"] { width: auto !important; }
+[class*="latin24CompactTimeStamp"] { width: auto !important; }
 .emoji[alt="🥺"], .emoji[alt=":pleading_face:"] { content: url("https://vendicated.github.io/random-files/pleading_face.svg"); }
 button[data-surrogates="🥺"]>div {
   background-image: url("https://vendicated.github.io/random-files/pleading_face.svg") !important;
@@ -17,25 +17,29 @@ button[data-surrogates="🥺"]>div {
 }
 
 /* general removals */
-div[class^="members"] span[class*="clanTag"] { display: none; }
-[class^="membersGroup"]:has([class^="headerContainer"]) { display: none !important; }
-[class^="burstGlow"] { display: none !important; }
-[class^="reaction"] { background: none !important; }
-div[class^="effectsWrapper"] { display: none; }
-[class^="reactionCount"] { color: var(--interactive-normal) !important; }
-[class^="channelAppLauncher"], [class^="hoverButtonGroup"]:has(div[aria-label*="Apps"]) { display: none !important; }
-[class^="upperBadge"] { display: none; }
-[class^="chatTypingGradient"] { display: none; }
+div[class*="members"] span[class*="clanTag"] { display: none; }
+[class*="membersGroup"]:has([class*="headerContainer"]) { display: none !important; }
+[class*="burstGlow"] { display: none !important; }
+[class*="reaction"] { background: none !important; }
+div[class*="effectsWrapper"] { display: none; }
+[class*="reactionCount"] { color: var(--interactive-normal) !important; }
+[class*="channelAppLauncher"], [class^="hoverButtonGroup"]:has(div[aria-label*="Apps"]) { display: none !important; }
+[class*="upperBadge"] { display: none; }
+[class*="chatTypingGradient"] { display: none; }
+.app-launcher-entrypoint { display: none !important; }
 
 /* nitro related removals */
-[class^="profileEffects"] { display: none !important; }
+[class*="profileEffects"] { display: none !important; }
 li>div>a[href="/shop"], li>div>a[href="/store"] { display: none !important; }
 div[aria-label*="Send a gift"] { display: none !important; }
 
 /* channel related removals */
-[class^="refreshVoiceChannelsButton"] { display: none !important; }
-[class^="newChannel"] { display: none !important; }
-[class^="sectionDivider"] { display: none !important; }
-div>img[class^="gameIcon"] { display: none !important; }
-#channels [class^=containerDefault_]:has(> div > h3), #channels [class^=containerDefault_]:has(> [class^=list_][class*=collapsed_]) { display: none !important; }
-nav>[class^="container"]:has([class^="voiceChannelsIcon"]) { display: none !important; }
+[class*="refreshVoiceChannelsButton"] { display: none !important; }
+[class*="newChannel"] { display: none !important; }
+[class*="sectionDivider"] { display: none !important; }
+div>img[class*="gameIcon"] { display: none !important; }
+[class*="voiceChannelHighlightContainer"] { display: none; }
+/* prevents hiding suggested channels [class*="containerDefault"]:has([class*="wrapperStatic"]) { display: none; } */
+/*[class*="containerDefault"]:has([class*="iconLive"]) { display: none; }*/
+/*#channels [class^=containerDefault_]:has(> div > h3), #channels [class^=containerDefault_]:has(> [class^=list_][class*=collapsed_]) { display: none !important; }*/
+nav>[class*="container"]:has([class*="voiceChannelsIcon"]) { display: none !important; }

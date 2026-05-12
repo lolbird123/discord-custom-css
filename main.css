@@ -8,6 +8,7 @@
 [class*="avatarDecoration"], [class*="profileHeader"] circle { display: none !important; }
 
 /* general fixes */
+[class*="slateTextArea"] * { text-transform: none !important;}
 [class*="latin24CompactTimeStamp"] { width: auto !important; }
 .emoji[alt="🥺"], .emoji[alt=":pleading_face:"] { content: url("https://vendicated.github.io/random-files/pleading_face.svg"); }
 button[data-surrogates="🥺"]>div {

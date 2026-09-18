@@ -28,6 +28,7 @@ div[class*="effectsWrapper"] { display: none; }
 [class*="upperBadge"] { display: none; }
 [class*="chatTypingGradient"] { display: none; }
 .app-launcher-entrypoint { display: none !important; }
+div[data-testid="quest-bar-container"] { display: none !important; }
 
 /* nitro related removals */
 [class*="profileEffects"] { display: none !important; }
